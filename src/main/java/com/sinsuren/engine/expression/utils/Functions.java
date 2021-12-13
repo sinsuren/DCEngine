@@ -14,7 +14,7 @@ public class Functions {
         return Collections.emptyList();
     }
 
-    public static List value(Map map) {
+    public static List values(Map map) {
         if(map != null) {
             return new ArrayList(map.values());
         }
@@ -22,7 +22,7 @@ public class Functions {
     }
 
 
-    public static Map ma(List keys, final List labels, final Map ... maps) {
+    public static Map map(List keys, final List labels, final Map ... maps) {
         if( labels.size() == maps.length) {
             Map map = new HashMap();
 

@@ -16,8 +16,13 @@ public class DefaultComposer implements Composer {
     private final Object context;
     private final List<String> dependencies;
 
-    public DefaultComposer(Object context, boolean isAlreadyParased) throws ComposerInstantiationException {
-        this.context = isAlreadyParased ? context : parse(context);
+    public DefaultComposer(Object context) throws ComposerInstantiationException {
+        this(context, false);
+    }
+
+
+    public DefaultComposer(Object context, boolean isAlreadyParsed) throws ComposerInstantiationException {
+        this.context = isAlreadyParsed ? context : parse(context);
         this.dependencies = findDependencies(this.context);
     }
 
